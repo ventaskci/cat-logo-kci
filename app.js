@@ -24,10 +24,18 @@
   const categories = ["Todos", ...new Set(PRODUCTS.map((p) => p.category))];
 
   const formatPrice = (value) =>
-    new Intl.NumberFormat("es-ES", {
+    new Intl.NumberFormat("es-CL", {
       style: "currency",
-      currency: "USD",
+      currency: "CLP",
+      maximumFractionDigits: 0,
     }).format(value);
+
+  // Muestra la imagen del producto, o un marcador si aún no tiene foto.
+  const productMedia = (p) =>
+    p.image
+      ? `<img class="card__img" src="${p.image}" alt="${p.name}" loading="lazy"
+            onerror="this.parentNode.innerHTML='<span class=&quot;card__placeholder&quot;>🛍️</span>'" />`
+      : `<span class="card__placeholder">🛍️</span>`;
 
   const getProduct = (id) => PRODUCTS.find((p) => p.id === Number(id));
 
@@ -64,7 +72,7 @@
         (p) => `
       <article class="card">
         <div class="card__media">
-          <img class="card__img" src="${p.image}" alt="${p.name}" loading="lazy" />
+          ${productMedia(p)}
         </div>
         <div class="card__body">
           <span class="card__category">${p.category}</span>
@@ -121,7 +129,11 @@
         if (!p) return "";
         return `
         <div class="cart-item">
-          <img class="cart-item__img" src="${p.image}" alt="${p.name}" />
+          ${
+            p.image
+              ? `<img class="cart-item__img" src="${p.image}" alt="${p.name}" />`
+              : `<span class="cart-item__img cart-item__img--placeholder">🛍️</span>`
+          }
           <div class="cart-item__info">
             <p class="cart-item__name">${p.name}</p>
             <p class="cart-item__price">${formatPrice(p.price)}</p>
