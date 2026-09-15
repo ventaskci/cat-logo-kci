@@ -8,7 +8,7 @@ const PRODUCTS = [
     name: "Jarrito",
     category: "Fiestas Patrias",
     price: 1500,
-    image: "", // ← pon aquí el nombre de la foto (ej: "jarrito.jpg") cuando la subas
+    image: "Jarrito.png",
     description:
       "Jarrito de 500ml para utilizar en diferentes bebidas estas Fiestas Patrias.",
   },

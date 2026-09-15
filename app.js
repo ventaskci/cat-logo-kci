@@ -30,10 +30,15 @@
       maximumFractionDigits: 0,
     }).format(value);
 
+  // Codifica nombres de archivo con espacios/mayúsculas para usarlos en URLs.
+  // Si es un enlace http(s) completo, lo deja tal cual.
+  const imageUrl = (src) =>
+    /^https?:\/\//i.test(src) ? src : encodeURIComponent(src);
+
   // Muestra la imagen del producto, o un marcador si aún no tiene foto.
   const productMedia = (p) =>
     p.image
-      ? `<img class="card__img" src="${p.image}" alt="${p.name}" loading="lazy"
+      ? `<img class="card__img" src="${imageUrl(p.image)}" alt="${p.name}" loading="lazy"
             onerror="this.parentNode.innerHTML='<span class=&quot;card__placeholder&quot;>🛍️</span>'" />`
       : `<span class="card__placeholder">🛍️</span>`;
 
@@ -131,7 +136,7 @@
         <div class="cart-item">
           ${
             p.image
-              ? `<img class="cart-item__img" src="${p.image}" alt="${p.name}" />`
+              ? `<img class="cart-item__img" src="${imageUrl(p.image)}" alt="${p.name}" />`
               : `<span class="cart-item__img cart-item__img--placeholder">🛍️</span>`
           }
           <div class="cart-item__info">
