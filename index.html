@@ -10,7 +10,9 @@
   <header class="header">
     <div class="header__inner">
       <img class="header__logo" src="logo.png" alt="Logo Ventas KCI"
-           onerror="this.style.display='none'" />
+           onerror="if(this.src.endsWith('logo.png')){this.src='logo.jpg';}
+                    else if(this.src.endsWith('logo.jpg')){this.src='logo.jpeg';}
+                    else{this.style.display='none';}" />
       <h1 class="header__title">Ventas <span class="accent">KCI</span></h1>
       <p class="header__subtitle">Tu catálogo de productos</p>
     </div>
