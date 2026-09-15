@@ -1,0 +1,235 @@
+:root {
+  --bg: #f4f2ee;       /* crema */
+  --cream: #fbf9f5;
+  --text: #4a3f42;     /* marrón grisáceo cálido */
+  --muted: #8a7d80;
+  --accent: #e8798a;   /* rosa coral */
+  --accent-dark: #d15d70;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #e9e6e0;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* ---------- Barra de herramientas (pantalla) ---------- */
+.toolbar {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border: 1px solid #e4e0da;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.toolbar__text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.toolbar__text strong {
+  color: var(--text);
+}
+
+.toolbar button {
+  flex-shrink: 0;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toolbar button:hover {
+  background: var(--accent-dark);
+}
+
+.hint {
+  max-width: 720px;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #6d6468;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- Hoja con las dos caras ---------- */
+.sheet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Tarjeta estándar: 85 x 55 mm */
+.card {
+  width: 85mm;
+  height: 55mm;
+  border-radius: 4mm;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.card__frame {
+  position: absolute;
+  inset: 3mm;
+  border: 1px solid rgba(232, 121, 138, 0.5);
+  border-radius: 3mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4mm;
+}
+
+/* ----- Frente ----- */
+.card--front {
+  background: var(--cream);
+  border-bottom: none;
+}
+
+.card__logo {
+  width: 22mm;
+  height: 22mm;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 2mm;
+}
+
+.card__brand {
+  font-size: 8.5mm;
+  font-weight: 700;
+  letter-spacing: 0.3mm;
+  line-height: 1;
+  color: var(--text);
+}
+
+.card__brand span {
+  color: var(--accent);
+}
+
+.card__tagline {
+  margin-top: 1.5mm;
+  font-size: 3mm;
+  letter-spacing: 0.6mm;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ----- Reverso ----- */
+.card--back {
+  background: var(--accent);
+}
+
+.card--back .card__frame {
+  border-color: rgba(255, 255, 255, 0.6);
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.back__title {
+  font-size: 6mm;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3mm;
+}
+
+.back__title span {
+  color: var(--cream);
+}
+
+.back__contact {
+  list-style: none;
+  color: #fff;
+}
+
+.back__contact li {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  font-size: 3.6mm;
+  margin-bottom: 2mm;
+}
+
+.back__contact .ico {
+  font-size: 4mm;
+}
+
+.back__nfc {
+  margin-top: 3mm;
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 2.5mm;
+  padding: 2mm 3mm;
+}
+
+.nfc-badge {
+  font-size: 3.4mm;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.nfc-text {
+  font-size: 2.7mm;
+  color: #fff;
+  line-height: 1.3;
+}
+
+/* ---------- Impresión ---------- */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff;
+    padding: 0;
+    display: block;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .sheet {
+    gap: 8mm;
+    justify-content: flex-start;
+  }
+
+  .card {
+    box-shadow: none;
+    /* Marcas de corte: un borde punteado fino para recortar */
+    outline: 0.2mm dashed #bbb;
+    outline-offset: 2mm;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

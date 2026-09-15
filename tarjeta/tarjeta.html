@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta de presentación · Ventas KCI</title>
+  <link rel="stylesheet" href="tarjeta.css" />
+</head>
+<body>
+  <!-- Barra de ayuda (no se imprime) -->
+  <div class="toolbar no-print">
+    <div class="toolbar__text">
+      <strong>Tarjeta lista para imprimir.</strong>
+      Pulsa el botón, elige <em>“Guardar como PDF”</em> y llévala a la imprenta.
+      Tamaño: 85 × 55 mm (estándar).
+    </div>
+    <button onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+  </div>
+
+  <div class="sheet">
+    <!-- ============ FRENTE ============ -->
+    <div class="card card--front">
+      <div class="card__frame">
+        <img class="card__logo" src="../logo.png.png" alt="Logo Ventas KCI"
+             onerror="this.style.display='none'" />
+        <h1 class="card__brand">Ventas <span>KCI</span></h1>
+        <p class="card__tagline">Tu almacén, a un toque de distancia</p>
+      </div>
+    </div>
+
+    <!-- ============ REVERSO ============ -->
+    <div class="card card--back">
+      <div class="card__frame">
+        <p class="back__title">Ventas <span>KCI</span></p>
+
+        <ul class="back__contact">
+          <li><span class="ico">💬</span> +56 9 5439 6020</li>
+          <li><span class="ico">🛒</span> ventaskci.github.io/cat-logo-kci</li>
+        </ul>
+
+        <div class="back__nfc">
+          <span class="nfc-badge">📲 NFC</span>
+          <span class="nfc-text">Acerca tu celular a la tarjeta<br/>y mira nuestro catálogo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="hint no-print">
+    💡 Consejo: en el cuadro de impresión, elige <strong>tamaño de papel A4</strong>,
+    márgenes <strong>“Ninguno”</strong> y activa <strong>“Gráficos de fondo”</strong>
+    para que se impriman los colores.
+  </p>
+</body>
+</html>
