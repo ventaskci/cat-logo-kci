@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Productos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <img class="header__logo" src="logo.png" alt="Logo Ventas KCI"
+           onerror="this.style.display='none'" />
+      <h1 class="header__title">Ventas <span class="accent">KCI</span></h1>
+      <p class="header__subtitle">Tu catálogo de productos</p>
+    </div>
+    <button class="cart-toggle" id="cartToggle" aria-label="Abrir carrito">
+      🛒 <span class="cart-toggle__count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <input
+        type="search"
+        id="search"
+        class="controls__search"
+        placeholder="Buscar productos..."
+        aria-label="Buscar productos"
+      />
+      <div class="controls__filters" id="filters"></div>
+    </section>
+
+    <section class="grid" id="grid" aria-live="polite"></section>
+
+    <p class="empty" id="empty" hidden>No se encontraron productos 😕</p>
+  </main>
+
+  <footer class="footer">
+    <p>© Ventas KCI · Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Botón flotante de contacto directo por WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/56954396020" target="_blank" rel="noopener">
+    <span class="whatsapp-float__icon">💬</span>
+    <span>Escríbenos</span>
+  </a>
+
+  <!-- Panel lateral del carrito -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart" id="cart" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart__header">
+      <h2 class="cart__title">Tu carrito</h2>
+      <button class="cart__close" id="cartClose" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart__items" id="cartItems"></div>
+    <p class="cart__empty" id="cartEmpty">Tu carrito está vacío 🛒</p>
+    <div class="cart__footer">
+      <div class="cart__total-row">
+        <span>Total</span>
+        <span class="cart__total" id="cartTotal">$0.00</span>
+      </div>
+      <button class="cart__checkout" id="cartCheckout">💬 Pedir por WhatsApp</button>
+    </div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
