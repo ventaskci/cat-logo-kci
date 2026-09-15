@@ -152,14 +152,22 @@ body {
 }
 
 .back__title {
-  font-size: 6mm;
+  font-size: 5.5mm;
   font-weight: 700;
   color: #fff;
-  margin-bottom: 3mm;
+  line-height: 1;
 }
 
 .back__title span {
   color: var(--cream);
+}
+
+.back__name {
+  font-size: 3.3mm;
+  color: #fff;
+  opacity: 0.95;
+  letter-spacing: 0.3mm;
+  margin-bottom: 2.5mm;
 }
 
 .back__contact {
@@ -171,8 +179,8 @@ body {
   display: flex;
   align-items: center;
   gap: 2mm;
-  font-size: 3.6mm;
-  margin-bottom: 2mm;
+  font-size: 3.3mm;
+  margin-bottom: 1.6mm;
 }
 
 .back__contact .ico {
@@ -180,7 +188,7 @@ body {
 }
 
 .back__nfc {
-  margin-top: 3mm;
+  margin-top: 2.5mm;
   display: flex;
   align-items: center;
   gap: 2.5mm;
