@@ -1,0 +1,8 @@
+{
+  id: 1,
+  name: "Choclo Minuto Verde",
+  category: "Congelados",
+  price: 2.950,
+  image: "https://choclo.jpg",
+  description: "Choclo desgranado Minuto Verde 1kg.",
+}
