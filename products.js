@@ -195,4 +195,13 @@ const PRODUCTS = [
     description:
       "Foco LED, duración de la carga 9hrs, 3 niveles de iluminación.",
   },
+  {
+  id: 22,
+  name: "Choclo Minuto Verde",
+  category: "Congelados",
+  price: 2950,
+  image: "Choclo.jpg",
+  description: "Choclo desgranado Minuto Verde 1kg.",
+  }
+
 ];
