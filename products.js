@@ -196,14 +196,15 @@ const PRODUCTS = [
       "Foco LED, duración de la carga 9hrs, 3 niveles de iluminación.",
   },
   {
-  id: 22,
+  id: 23,
   name: "Choclo Minuto Verde",
   category: "Congelados",
   price: 2950,
   image: "Choclo.jpg",
   description: "Choclo desgranado Minuto Verde 1kg.",
+    
   },
-    id: 23,
+  id: 24,
   name: "Arrollado Jamón Queso",
   category: "Masas",
   price: 4500,
