@@ -204,12 +204,13 @@ const PRODUCTS = [
   description: "Choclo desgranado Minuto Verde 1kg.",
     
   },
+{
   id: 24,
-  name: "Arrollado Jamón Queso",
+  name: "Arrollados Jamón Queso",
   category: "Masas",
   price: 4500,
   image: "Arrollado.jpg",
-  description: "Arrollados Jamón Queso 10 Unidades.",
-  }
+  description: "Arrollados Jamón Queso 10 unidades.",
+}
 
 ];
